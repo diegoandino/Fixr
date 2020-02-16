@@ -15,6 +15,11 @@ function saveBug(e) {
         status: bugStatus
     }
 
+    //Check if Bug Description or Assigned Person tab is empty
+    if (bug.description == "" && bug.assignedTo == "") {
+        return false;
+    }
+
     if (localStorage.getItem('bugs') == null) {
         //List of bugs to present
         var bugs = [];
@@ -33,10 +38,10 @@ function saveBug(e) {
     e.preventDefault();
 }
 
-function getBugs() {
+function getBugs(canPost) {
     var bugs = JSON.parse(localStorage.getItem('bugs'));
     var bugList = document.getElementById('bugList');
-
+    
     bugList.innerHTML = '';
 
     for (let i = 0; i < bugs.length; i++) {
@@ -52,8 +57,8 @@ function getBugs() {
                                '<h3>' + desc + '</h3>' +
                                '<p><span class="glyphicon glyphicon-time"></span>' + priority + '</p>' +
                                '<p><span class="glyphicon glyphicon-user"></span>' + assignedTo + '</p>' +
-                               '<a href="#" onClick="setStatusClosed(\''+ id + '\')" class="btn btn-warning">Close</a>' +
-                               '<a href="#" onClick="deleteBug(\''+ id + '\')" class="btn btn-danger">Delete</a>' +
+                               '<a href="#" onClick="setStatusClosed(\''+ id + '\')" class="btn btn-warning">Close</a> ' +
+                               '<button type="button" href="#" onClick="deleteBug(\''+ id + '\')" class="btn btn-danger">Delete</button>' +
                                '</div>';
     }
 }
