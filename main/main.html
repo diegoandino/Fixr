@@ -8,10 +8,11 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/main/styles.css" />
     <title>Fixr</title>
 </head>
 
-<body onload="getBugs()">
+<body onload="getBugs()" class="body">
     <div class="container">
         <h1>Fixr</h1>
         <div class="jumbotron">
@@ -22,8 +23,13 @@
                     <input type="text" class="form-control" id="bugDescInput" placeholder="Describe bug">
                 </div>
                 <div class="form-group">
+                    <label for="bugTagInput">Assign your bug a tag (e.g group, team, type, etc.)</label>
+                    <input type="text" class="form-control" id="bugTagInput" placeholder="Assign tag">
+                </div>
+                <div class="form-group">
                     <label for="bugDescInput">Priority</label>
                     <select class="form-control" id="bugPriorityInput">
+                        <option value="Low">N/A</option>
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
