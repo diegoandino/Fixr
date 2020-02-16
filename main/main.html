@@ -14,17 +14,17 @@
 
 <body onload="getBugs()" class="body">
     <div class="container">
-        <h1>Fixr</h1>
+        <h1 class="title">FIXR</h1>
         <div class="jumbotron">
             <h3>Add new bug:</h3>
             <form id="bugInputForm">
                 <div class="form-group">
                     <label for="bugDescInput">Bug Description</label>
-                    <input type="text" class="form-control" id="bugDescInput" placeholder="Describe bug">
+                    <input type="text" class="form-control" id="bugDescInput" placeholder="Describe Bug">
                 </div>
                 <div class="form-group">
                     <label for="bugTagInput">Assign your bug a tag (e.g group, team, type, etc.)</label>
-                    <input type="text" class="form-control" id="bugTagInput" placeholder="Assign tag">
+                    <input type="text" class="form-control" id="bugTagInput" placeholder="Assign Tag">
                 </div>
                 <div class="form-group">
                     <label for="bugDescInput">Priority</label>
@@ -37,9 +37,10 @@
                 </div>
                 <div class="form-group">
                     <label for="bugAssignedToInput">Assigned To</label>
-                    <input type="text" class="form-control" id="bugAssignedToInput" placeholder="Assigned person">
+                    <input type="text" class="form-control" id="bugAssignedToInput" placeholder="Assigned Person">
                 </div>
                 <button type="submit" class="btn btn-primary">Add bug</button>
+                <button type="submit" onClick="deleteAllBugs()" class="btn btn-primary">Delete All</button>
             </form>
         </div>
         <div class="col-lg-12">
