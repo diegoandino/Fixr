@@ -5,6 +5,7 @@ function saveBug(e) {
     var bugPriority = document.getElementById('bugPriorityInput').value;
     var bugAssignedTo = document.getElementById('bugAssignedToInput').value;
     var bugTag = document.getElementById('bugTagInput').value;
+    var bugFile = document.getElementById('fileInput').value;
     var bugId = chance.guid();
     var bugStatus = 'Open';
     var datePosted = getDate(new Date);
@@ -16,7 +17,8 @@ function saveBug(e) {
         assignedTo: bugAssignedTo,
         status: bugStatus,
         tag: bugTag,
-        date: datePosted 
+        date: datePosted, 
+        file: bugFile
     }
 
     //Check if Bug Description or Assigned Person tab is empty
@@ -56,14 +58,16 @@ function getBugs(canPost) {
         var status = bugs[i].status;
         var tag = bugs[i].tag;
         var date = bugs[i].date;
+        var file = bugs[i].file;
 
         bugList.innerHTML += '<div class="well">' + 
                               '<h6>Issue ID:' + id + '</h6>' +
-                              '<p><span class="label label-info">' + status + '</span> <span class="label label-info">' + tag + '</span></p>' +
+                              '<p><span class="label label-info">' + status + '</span> <span class="label label-success">' + tag + '</span></p>' +
                                '<h3>' + desc + '</h3>' +
-                               '<p><span class="glyphicon glyphicon-time"></span>' + " Date posted: " + date + " " + '</p>' +
+                               '<p><span class="glyphicon glyphicon-time"></span>' + " Date posted: " + date + '</p>' +
+                               '<p><span class="glyphicon glyphicon-folder-open"></span>' + " File location: " + file + '</p>' +
                                '<p><span class="glyphicon glyphicon-exclamation-sign"></span>' + " Priority: " + priority + '</p>' +
-                               '<p><span class="glyphicon glyphicon-user"></span>' + " " + assignedTo + '</p>' +
+                               '<p><span class="glyphicon glyphicon-user"></span>' + " Assigned To: " + assignedTo + '</p>' +
                                '<a href="#" onClick="setStatusClosed(\''+ id + '\')" class="btn btn-warning">Close</a> ' +
                                '<button type="button" href="#" onClick="deleteBug(\''+ id + '\')" class="btn btn-danger">Delete</button>' +
                                '</div>';
