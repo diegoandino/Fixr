@@ -1,5 +1,5 @@
 function searchTicket() { 
-    let input = document.getElementById('search-input').value 
+    let input = document.getElementById('search-input').value;
     input = input.toLowerCase(); 
     let x = document.getElementsByClassName('well'); 
       

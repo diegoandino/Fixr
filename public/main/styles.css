@@ -24,9 +24,17 @@ h1, h3, h6, p, label, .footer {
 
 .title {
     font-family: 'Quicksand', sans-serif;
+    font-size: 5rem;
+    text-decoration: none;
     font-weight: lighter;
     position: relative;
+    color: white;
     top: 1.5%; /* Exact measurement align with search bar for title */
+}
+
+.title:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .jumbotron {
@@ -221,4 +229,15 @@ input, select{
     -webkit-transform: translate(-100%, -50%);
     -ms-transform: translate(-100%, -50%);
     transform: translate(-100%, -50%);
+  }
+
+  .sign-out {
+    padding: 2rem 7rem;
+    background: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
   }

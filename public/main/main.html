@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Latest compiled and minified CSS -->
+
+    <!-- update the version number as needed -->
+	<script defer src="/__/firebase/7.8.1/firebase-app.js"></script>
+	<!-- include only the Firebase features as you need -->
+	<script defer src="/__/firebase/7.8.1/firebase-auth.js"></script>
+	<script defer src="/__/firebase/7.8.1/firebase-database.js"></script>
+	<script defer src="/__/firebase/7.8.1/firebase-messaging.js"></script>
+	<script defer src="/__/firebase/7.8.1/firebase-storage.js"></script>
+	<!-- initialize the SDK after all desired features are loaded -->
+	<script defer src="/__/firebase/init.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css" />
@@ -15,7 +26,9 @@
 
 <body onload="getBugs()" class="body">
     <div class="container">
-        <h1 class="title">FIXR</h1>
+        <a href='main.html' class="title">FIXR</a><br>
+        <button type="button" onClick="googleSignOut()" class="btn btn-outline-success">Sign Out</button>
+        <h2 class="user-name"></h2>
         <form id="content" class="navbar-header">
             <input type="text" name="input" class="input" id="search-input" onkeyup="searchTicket()">
             <button type="reset" class="search" id="search-btn"></button>
@@ -60,17 +73,11 @@
             <p>&copy andino.io</p>
         </div>
 
+        <script src="../js/app.js"></script>
         <script src="main.js"></script>
         <script src="searchBar.js"></script>
         <script src="searchTicket.js"></script>
         <script src="https://chancejs.com/chance.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-        </script>
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </div>
-
 </body>
-
 </html>
