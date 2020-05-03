@@ -7,8 +7,12 @@ function searchTicket() {
         if (!x[i].innerHTML.toLowerCase().includes(input)) { 
             x[i].style.display = "none"; 
         } 
-        else { 
-            x[i].style.display = "list-item";                  
-        } 
+
+        $(document).on('keypress',function(e) {
+            if(e.which === 13) {
+                x[i].style.display = "list-item";  
+                //x[i].scrollIntoView(false); 
+            }
+        });
     } 
 } 

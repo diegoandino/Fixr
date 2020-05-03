@@ -241,3 +241,9 @@ input, select{
     font-weight: 700;
     position: relative;
   }
+
+  #profile-data-btn {
+    display: block !important;
+    margin: auto;
+    padding-bottom: 100px;
+  }
