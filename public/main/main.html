@@ -5,31 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="google-signin-client_id" content="1079924535399-osp8slpikt6ph1099jqtj80ngihcgt38.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+        content="1079924535399-osp8slpikt6ph1099jqtj80ngihcgt38.apps.googleusercontent.com">
     <!-- Latest compiled and minified CSS -->
 
     <!-- update the version number as needed -->
-	<script defer src="/__/firebase/7.8.1/firebase-app.js"></script>
-	<!-- include only the Firebase features as you need -->
-	<script defer src="/__/firebase/7.8.1/firebase-auth.js"></script>
-	<script defer src="/__/firebase/7.8.1/firebase-database.js"></script>
-	<script defer src="/__/firebase/7.8.1/firebase-messaging.js"></script>
-	<script defer src="/__/firebase/7.8.1/firebase-storage.js"></script>
-	<!-- initialize the SDK after all desired features are loaded -->
-	<script defer src="/__/firebase/init.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.8.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.8.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="getProfileData.js"></script>
     <script>
         function onLoad() {
-          gapi.load('auth2', function() {
-            gapi.auth2.init();
-          });
+            gapi.load('auth2', function () {
+                gapi.auth2.init();
+            });
         }
     </script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
     <title>FIXR - HOME</title>
 </head>
@@ -41,9 +43,10 @@
         <button type="button" class="btn btn-outline-success" onclick="getProfileData()">Show Profile Data</button>
         <div class="data" style="display: none;">
             <br>
-            <button type="submit" id="hide-data-btn" class="btn btn-outline-success" onclick="hideProfileData()" style="display: none;">Hide Profile Data</button>
+            <button type="submit" id="hide-data-btn" class="btn btn-outline-success" onclick="hideProfileData()"
+                style="display: none;">Hide Profile Data</button>
             <br>
-            <img id="profile-picture" class="img-circle"/>
+            <img id="profile-picture" class="img-circle" />
             <p id="username"></p>
         </div>
         <form id="content" class="navbar-header">
@@ -63,7 +66,8 @@
                 </div>
                 <div class="form-group">
                     <label for="bugFileInput">Source of bug</label>
-                    <input type="text" class="form-control" id="fileInput" placeholder="Input File and Directory Location">
+                    <input type="text" class="form-control" id="fileInput"
+                        placeholder="Input File and Directory Location">
                 </div>
                 <div class="form-group">
                     <label for="bugPriorityInput">Priority</label>
@@ -105,6 +109,31 @@
         <script src="searchBar.js"></script>
         <script src="searchTicket.js"></script>
         <script src="https://chancejs.com/chance.min.js"></script>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCDIt082d4gAtxi2xPLum8LJG54B2X6YOA",
+                authDomain: "fixr-24bb6.firebaseapp.com",
+                databaseURL: "https://fixr-24bb6.firebaseio.com",
+                projectId: "fixr-24bb6",
+                storageBucket: "fixr-24bb6.appspot.com",
+                messagingSenderId: "1079924535399",
+                appId: "1:1079924535399:web:f6e4dc2625e8cd0e3924c2",
+                measurementId: "G-F8PK2Y9CX5"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
     </div>
 </body>
+
 </html>
